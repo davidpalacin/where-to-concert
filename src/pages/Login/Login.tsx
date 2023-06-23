@@ -11,7 +11,7 @@ export function Login() {
 	function handleClick() {
 		const user = fakeData.users.find(user => user.email === email)
 		if (!user) {
-			alert('User not found')
+			alert('Invalid credentials')
 			return
 		}
 		if (password === user.password) {
