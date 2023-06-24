@@ -1,5 +1,6 @@
 import { fakeData } from '../../../fakeData'
-import './MainPage.css'
+import Post from '../../components/Post/Post'
+import './mainPage.css'
 
 export function MainPage() {
     const posts = fakeData.posts
@@ -11,16 +12,7 @@ export function MainPage() {
                 {
                     posts.map(post => {
                         return (
-                            <article className='post' key={post.id}>
-                                <header>
-                                    <h3>{post.title}</h3>
-                                </header>
-                                <p>{post.user}</p>
-                                <p>{post.content}</p>
-                                <p>{post.artist}</p>
-                                <p>{post.genre}</p>
-                                <p>Will go {post.willGo} people</p>
-                            </article>
+                            <Post key={post.id} {...post} />
                         )
                     })
                 }
