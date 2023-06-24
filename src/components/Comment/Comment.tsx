@@ -3,16 +3,16 @@ import { Comment } from "../../interfaces/Comment";
 import './comment.css'
 
 
-export default function Comment({content, user}: Comment) {
+export default function Comment({content, user, className}: Comment) {
     function getUserName(userId: number) {
-		const user = fakeData.users.find((user) => user.id === userId);
-    	return user ? user.name : '';
+		const user = fakeData.users.find((user) => user.id === userId)
+    	return user ? user.name : ''
 	}
 
   return (
-    <div className='comment'>
-		<p className='commentAuthor'>{getUserName(user)}:</p>
-		<p>{content}</p>
+    <div className={`comment ${className}`}>
+		<p className='commentAuthor'>{getUserName(user)}</p>
+		<p className="commentContent">{content}</p>
 	</div>
   )
 }
