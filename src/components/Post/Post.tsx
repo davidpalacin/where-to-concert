@@ -1,5 +1,5 @@
 import { Post } from "../../interfaces/Post"
-import { ChangeEvent, FormEvent, useState } from "react"
+import { ChangeEvent, useState } from "react"
 import './post.css'
 import Comment from "../Comment/Comment"
 
@@ -14,16 +14,22 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 	}
 
 	const handleCommentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    	setNewComment(e.target.value);
+    	setNewComment(e.target.value)
   	}
 
-	const handleCommentSubmit = (e: FormEvent<HTMLFormElement>) => {
-		e.preventDefault()
+	const handleCommentSubmit = () => {
 		const trimmedComment = newComment.trim()
 		if (trimmedComment === "") return
 		commentList.push({ content: newComment, user: 3 })
 		setCommentList(commentList);
 		setNewComment('')
+	}
+
+	function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
+		if (e.key === 'Enter') {
+			e.preventDefault();
+      		handleCommentSubmit();
+		}
 	}
 
 	return (
@@ -39,16 +45,16 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 				<p> Will go { willGoNum } people </p>
 				<button onClick={ handleClick }>I will go!</button>
 			</div>
-			<strong> Comments: </strong>
+			<strong> Comments </strong>
 			<div className="commentsBox">
 				{
 					commentList.map((comment, index) => (
 						<Comment key={index} {...comment} className={ index % 2 === 0 ? 'bgWhite' : 'bgGrey' } />
 					))
 				}
-				<form className="formNewComment" onSubmit={handleCommentSubmit}>
-          			<textarea className="newComment" value={newComment} onChange={handleCommentChange} placeholder="Escribe un comentario..." />
-          			<button type="submit">Enviar</button>
+				<form className="formNewComment">
+          			<textarea className="newComment" value={newComment} onChange={handleCommentChange} onKeyDown={handleKeyDown} placeholder="Escribe un comentario..." />
+          			<button onClick={handleCommentSubmit} type="button">Enviar</button>
         		</form>
 			</div>
 		</article>
