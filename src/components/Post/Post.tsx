@@ -13,11 +13,11 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 		setWillGoNum(++willGoNum)
 	}
 
-	const handleCommentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+	function handleCommentChange (e: ChangeEvent<HTMLTextAreaElement>) {
     	setNewComment(e.target.value)
   	}
 
-	const handleCommentSubmit = () => {
+	function handleCommentSubmit () {
 		const trimmedComment = newComment.trim()
 		if (trimmedComment === "") return
 		commentList.push({ content: newComment, user: 3 })
