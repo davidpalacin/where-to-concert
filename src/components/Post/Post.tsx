@@ -21,7 +21,7 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 		e.preventDefault()
 		const trimmedComment = newComment.trim()
 		if (trimmedComment === "") return
-		commentList.push({ content: newComment, user: 1 })
+		commentList.push({ content: newComment, user: 3 })
 		setCommentList(commentList);
 		setNewComment('')
 	}
