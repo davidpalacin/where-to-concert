@@ -2,10 +2,13 @@ import './login.css'
 import { ChangeEvent, KeyboardEvent, useState } from 'react'
 import { fakeData } from '../../../fakeData'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from "react-redux"
+import { login } from '../../features/user/userSlice'
 
 export function Login() {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+	const dispatch = useDispatch()
 	const navigate = useNavigate()
 
 	function handleClick() {
@@ -15,6 +18,7 @@ export function Login() {
 			return
 		}
 		if (password === user.password) {
+			dispatch(login(user))
 			navigate('/home')
 		} else {
 			alert('Invalid credentials')

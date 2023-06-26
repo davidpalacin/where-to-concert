@@ -2,8 +2,10 @@ import { Post } from "../../interfaces/Post"
 import { ChangeEvent, useState } from "react"
 import './post.css'
 import Comment from "../Comment/Comment"
+import { getUser } from "../../utils/getUser"
 
 export default function Post({ id, author, title, content, artist, genre, willGo, comments }: Post) {
+	const user = getUser()
 	let [willGoNum, setWillGoNum] = useState(willGo)
 	const [newComment, setNewComment] = useState('')
 	const [commentList, setCommentList] = useState(comments)
@@ -21,7 +23,7 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 	function handleCommentSubmit() {
 		const trimmedComment = newComment.trim()
 		if (trimmedComment === "") return
-		commentList.push({ content: newComment, user: 3 })
+		commentList.push({ content: newComment, user: user.id })
 		setCommentList(commentList)
 		setFold(true)
 		setNewComment('')
