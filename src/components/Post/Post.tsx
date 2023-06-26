@@ -22,7 +22,8 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 		const trimmedComment = newComment.trim()
 		if (trimmedComment === "") return
 		commentList.push({ content: newComment, user: 3 })
-		setCommentList(commentList);
+		setCommentList(commentList)
+		setFold(true)
 		setNewComment('')
 	}
 
@@ -52,12 +53,14 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 			</div>
 			<strong> Comments </strong>
 			<div className="commentsBox">
-				{commentList.slice(0, fold ? commentList.length : 1).map((comment, index) => (
-					<Comment key={index} {...comment} className={index % 2 === 0 ? 'bgWhite' : 'bgGrey'} />
-				))}
+				<div className="commentsList">
+					{commentList.slice(0, fold ? commentList.length : 1).map((comment, index) => (
+						<Comment key={index} {...comment} className={index % 2 === 0 ? 'bgWhite' : 'bgGrey'} />
+					))}
+				</div>
 				{commentList.length > 1 && (
 					<button className="btnShowComments" onClick={toggleShowComments}>
-						{fold ? "See less comments" : "See more comments"}
+						{fold ? "Hide comments" : "See more comments..."}
 					</button>
 				)}
 				<form className="formNewComment">

@@ -37,7 +37,6 @@
 .formNewComment {
     display: flex;
     flex-direction: column;
-    margin: 13px;
 }
 
 .btnComment {
@@ -51,6 +50,10 @@
     border-radius: 4px;
     cursor: pointer;
 }
-
-.btnShowComments {
+.btnShowComments{
+    border: none;
+    background-color: transparent;
+    width: fit-content;
+    color: rgb(24, 36, 255);
+    cursor: pointer;
 }
