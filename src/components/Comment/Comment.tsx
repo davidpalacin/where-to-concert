@@ -14,7 +14,7 @@ export default function Comment({content, user, likes, className}: Comment) {
     <div className={`comment ${className}`}>
 		<p className='commentAuthor'>{getUserName(user)}</p>
 		<p className="commentContent">{content}</p>
-		<span>Les gusta a {likes.length} usuarios</span>
+		<span>{likes.length} likes </span>
 	</div>
   )
 }
