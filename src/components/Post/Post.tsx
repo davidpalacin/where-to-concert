@@ -10,6 +10,7 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 	const [newComment, setNewComment] = useState('')
 	const [commentList, setCommentList] = useState(comments)
 	const [fold, setFold] = useState(false) // variable used to fold and unfold comments
+	const [numComments, setNumComments] = useState(comments.length)
 
 
 	function handleClick() {
@@ -23,10 +24,11 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 	function handleCommentSubmit() {
 		const trimmedComment = newComment.trim()
 		if (trimmedComment === "") return
-		commentList.push({ content: newComment, user: user.id })
+		commentList.push({ content: newComment, user: user.id, likes: [], className: '' })
 		setCommentList(commentList)
 		setFold(true)
 		setNewComment('')
+		setNumComments(commentList.length)
 	}
 
 	function handleKeyDown(e: React.KeyboardEvent<HTMLTextAreaElement>) {
@@ -53,7 +55,7 @@ export default function Post({ id, author, title, content, artist, genre, willGo
 				<p> Will go {willGoNum} people </p>
 				<button onClick={handleClick}>I will go!</button>
 			</div>
-			<strong> Comments </strong>
+			<strong> Comments ({numComments}) </strong>
 			<div className="commentsBox">
 				<div className="commentsList">
 					{commentList.slice(0, fold ? commentList.length : 1).map((comment, index) => (

@@ -41,10 +41,22 @@ export const fakeData = {
       genre: "Metal",
       willGo: 0,
       comments: [
-        { content: "sounds nice", user: 2 },
-        { content: "Lorem ipsum dolor sit amet", user: 4 },
-        { content: "Lorem ipsum dolor sit amet", user: 2 },
-        { content: "Lorem ipsum dolor sit amet", user: 3 },
+        { content: "sounds nice", user: 2, likes: [{ user: 1 }] },
+        {
+          content: "Lorem ipsum dolor sit amet",
+          user: 4,
+          likes: [{ user: 1 }],
+        },
+        {
+          content: "Lorem ipsum dolor sit amet",
+          user: 2,
+          likes: [{ user: 1 }],
+        },
+        {
+          content: "Lorem ipsum dolor sit amet",
+          user: 3,
+          likes: [{ user: 1 }],
+        },
       ],
     },
     {
@@ -61,6 +73,7 @@ export const fakeData = {
           content:
             "I've been waiting for a rock festival like this! Can't wait!",
           user: 3,
+          likes: [{ user: 1 }],
         },
       ],
     },
@@ -78,6 +91,7 @@ export const fakeData = {
           content:
             "I love discovering new indie bands. I'll definitely be there!",
           user: 4,
+          likes: [{ user: 1 }],
         },
       ],
     },

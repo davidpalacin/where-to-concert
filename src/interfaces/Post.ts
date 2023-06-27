@@ -1,3 +1,5 @@
+import { Comment } from "./Comment";
+
 export interface Post {
   id: number;
   author: string;
@@ -6,5 +8,5 @@ export interface Post {
   artist: string;
   genre: string;
   willGo: number;
-  comments: { content: string; user: number }[];
+  comments: Comment[];
 }
