@@ -7,7 +7,7 @@ export default function Comment({content, user, likes, className}: Comment) {
 
     function getUserName(userId: number) {
 		const user = fakeData.users.find((user) => user.id === userId)
-    	return user ? user.name : ''
+    	return user ? user.name : 'default'
 	}
 
   return (
