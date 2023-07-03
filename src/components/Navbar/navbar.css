@@ -1,0 +1,25 @@
+.nav-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar {
+    display: flex;
+    background-color: #127ce5;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.navbar-item:hover {
+    background-color: rgb(170, 192, 255);
+    cursor: pointer;
+}
+
+.navbar-item {
+    padding: 10px 25px;
+}
+
+.navbar>.navbar-username {
+    margin-left: auto;
+    font-weight: bold;
+}
