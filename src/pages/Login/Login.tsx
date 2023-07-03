@@ -41,7 +41,7 @@ export function Login() {
 
 	return (
 		<div className="login">
-			<h3>Login</h3>
+			<h3 className='login-title'>Iniciar Sesión</h3>
 			<div className="login-form">
 				<label htmlFor="email">Email</label>
 				<input type="text" onChange={handleEmailChange} />

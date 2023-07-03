@@ -1,59 +1,62 @@
-.post {
-    width: 30rem;
-    border: 3px solid black;
-    padding: 0 13px
-}
+@media (min-width: 1000px) {
+    .post {
+        width: 30rem;
+        border: 3px solid black;
+        padding: 0 13px
+    }
 
-.willGoBox {
-    display: flex;
-    flex-direction: row;
-    gap: 13px;
-}
+    .willGoBox {
+        display: flex;
+        flex-direction: row;
+        gap: 13px;
+    }
 
-.willGoBox button {
-    padding: 10px;
-    width: 5rem;
-    margin: 10px 0;
-    background-color: rgb(0, 171, 238);
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
+    .willGoBox button {
+        padding: 10px;
+        width: 5rem;
+        margin: 10px 0;
+        background-color: rgb(0, 171, 238);
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
 
-.bgWhite {
-    background-color: white;
-}
+    .bgWhite {
+        background-color: white;
+    }
 
-.bgGrey {
-    background-color: #b3b3b3;
-}
+    .bgGrey {
+        background-color: #b3b3b3;
+    }
 
-.newComment {
-    resize: none;
-}
+    .newComment {
+        resize: none;
+    }
 
-.formNewComment {
-    display: flex;
-    flex-direction: column;
-}
+    .formNewComment {
+        display: flex;
+        flex-direction: column;
+    }
 
-.btnComment {
-    padding: 10px;
-    width: 5rem;
-    margin: 10px 0;
-    background-color: rgb(0, 171, 238);
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.btnShowComments{
-    border: none;
-    background-color: transparent;
-    width: fit-content;
-    color: rgb(24, 36, 255);
-    cursor: pointer;
+    .btnComment {
+        padding: 10px;
+        width: 5rem;
+        margin: 10px 0;
+        background-color: rgb(0, 171, 238);
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btnShowComments {
+        border: none;
+        background-color: transparent;
+        width: fit-content;
+        color: rgb(24, 36, 255);
+        cursor: pointer;
+    }
 }
