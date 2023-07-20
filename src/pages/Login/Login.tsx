@@ -40,17 +40,20 @@ export function Login() {
 	}
 
 	return (
-		<div className="login">
-			<h3 className='login-title'>Iniciar Sesión</h3>
-			<div className="login-form">
-				<label htmlFor="email">Email</label>
-				<input type="text" onChange={handleEmailChange} />
-				<label htmlFor="password">Password</label>
-				<input type="password" onChange={handlePasswordChange} onKeyDown={handleKeyDown} />
+		<main>
+			<div className="login">
+				<h3 className='login-title'>Iniciar Sesión</h3>
+				<div className="login-form">
+					<label htmlFor="email">Email</label>
+					<input type="text" onChange={handleEmailChange} />
+					<label htmlFor="password">Password</label>
+					<input type="password" onChange={handlePasswordChange} onKeyDown={handleKeyDown} />
+				</div>
+				<button onClick={handleClick} className='btnEnter'>
+					Enter
+				</button>
 			</div>
-			<button onClick={handleClick} className='btnEnter'>
-				Enter
-			</button>
-		</div>
+		</main>
+
 	)
 }

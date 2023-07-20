@@ -14,7 +14,7 @@ export default function Navbar() {
         <nav className='navbar'>
             <div className="navbar-item">Inicio</div>
             <div className="navbar-item">Compartir evento</div>
-            <div className="navbar-item navbar-username" onClick={handleLogout}>{user.name}</div>
+            <div className="navbar-item navbar-username" onClick={handleLogout}>{user.name || 'logout'}</div>
         </nav>
     )
 }

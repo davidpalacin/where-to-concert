@@ -8,6 +8,8 @@
     background-color: #127ce5;
     color: white;
     margin-bottom: 10px;
+    font-weight: bold;
+    height: 5rem;
 }
 
 .navbar-item:hover {
@@ -16,7 +18,10 @@
 }
 
 .navbar-item {
+    display: flex;
+    align-items: center;
     padding: 10px 25px;
+    font-size: 1.2rem;
 }
 
 .navbar>.navbar-username {
